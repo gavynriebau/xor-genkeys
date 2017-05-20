@@ -7,7 +7,7 @@ use std::io::{Write};
 fn main() {
 
     let matches = App::new("xor-genkeys")
-        .version("1.0.0")
+        .version("0.1.0")
         .author("Gavyn Riebau")
         .about("Generates sets of ascii values that can be used as guessed keys when decrypting xor encrypted content")
         .arg(Arg::with_name("LENGTH")
