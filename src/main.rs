@@ -1,4 +1,5 @@
 extern crate clap;
+extern crate xor_genkeys;
 
 use clap::{App, Arg};
 use std::io;
@@ -18,18 +19,10 @@ fn main() {
 
     let length_str = matches.value_of("LENGTH").unwrap();
     let length = length_str.parse::<u32>().expect("Failed to parse LENGTH into u32. LENGTH must be numeric");
-    let max = 128u32.pow(length);
+    let keys = xor_genkeys::gen_ascii_keys(length);
 
-    for i in 0..max {
-        let mut value = i;
-
-        for j in (0..length).rev() {
-            let digit = value / 128u32.pow(j);
-            value = value - digit * 128u32.pow(j);
-            print!("{}", (digit as u8) as char);
-        }
-
-        println!();
+    for key in keys {
+        println!("{}", key);
     }
 
     io::stdout().flush().expect("Failed to flush stdout.");
