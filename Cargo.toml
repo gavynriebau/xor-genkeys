@@ -1,7 +1,7 @@
 [package]
 name = "xor-genkeys"
 description = "Command line application that generates keys that can be used in guesses when attempting to decrypt content encrypted using xor encryption."
-version = "0.2.0"
+version = "0.3.0"
 authors = ["gavyn <gavyn.riebau@gmail.com>"]
 documentation = "https://github.com/gavynriebau/xor-genkeys"
 homepage = "https://github.com/gavynriebau/xor-genkeys"
@@ -12,3 +12,4 @@ license = "MIT"
 
 [dependencies]
 clap = "2.24.2"
+xor-utils = "0.2.0"
